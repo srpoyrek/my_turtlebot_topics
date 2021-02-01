@@ -55,4 +55,3 @@ if __name__ == "__main__":
         data = laser_sub_object.get_laserdata()
         laser_sub_object.crash_data()
         #rospy.loginfo(data.ranges)
-        rate.sleep()
