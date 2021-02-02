@@ -24,9 +24,9 @@ class DirectionServiceClass(object):
     #if  front laser reading less than 0.8 indicates potential crash
     def potentional_crash(self):
         if self.dirc_data["front"] < 0.8: #if less than 0.8 indicates potential crash
-            return True
-        else:
             return False
+        else:
+            return True
     #if right laser readings is more than left move right else move left 
     def direction_to_move(self):
         if self.dirc_data["right"] > self.dirc_data["left"]:

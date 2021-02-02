@@ -1,0 +1,21 @@
+<launch>
+    
+    <node pkg ="my_turtlebot_topics"
+        type="odometry_action_server.py"
+        name="odom_action_server_node"
+        output="screen">
+  </node>
+  
+  <node pkg ="my_turtlebot_topics"
+        type="direction_service.py"
+        name="direction_service_srv_node"
+        output="screen">
+  </node>
+
+  <node pkg ="my_turtlebot_topics"
+        type="main_program.py"
+        name="turtlebot_main_node"
+        output="screen">
+  </node>
+    
+</launch>

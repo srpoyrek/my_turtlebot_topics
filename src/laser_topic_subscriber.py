@@ -50,6 +50,7 @@ if __name__ == "__main__":
         ctrl_c = True
     
     rospy.on_shutdown(shutdownhook)
+    
     time.sleep(2)
     while not ctrl_c:
         data = laser_sub_object.get_laserdata()

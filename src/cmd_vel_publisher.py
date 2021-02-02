@@ -12,7 +12,7 @@ class CmdVelPubClass(object):
         # gemometry message linear and angular speed variables for /cmd_vel message
         self.rate = rospy.Rate(1)
         self.linearspeerd = 0.5
-        self.angluarspeed = 0.5
+        self.angluarspeed = 0.25
 
     
     def publish_once_in_cmd_vel(self, cmd):
@@ -34,15 +34,15 @@ class CmdVelPubClass(object):
             self._twist_msg_object.linear.x = self.linearspeerd
             self._twist_msg_object.angular.z = 0
 
-        elif direction =="Turn_Left":
+        elif direction =="left":
             self._twist_msg_object.linear.x = 0
             self._twist_msg_object.angular.z = -self.angluarspeed            
 
-        elif direction =="Turn_Right":
+        elif direction =="right":
             self._twist_msg_object.linear.x = 0
             self._twist_msg_object.angular.z = self.angluarspeed
         
-        elif direction=="Backward":
+        elif direction=="backward":
             self._twist_msg_object.linear.x = - self.linearspeerd 
             self._twist_msg_object.angular.z = 0
         
