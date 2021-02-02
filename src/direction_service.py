@@ -14,6 +14,9 @@ class DirectionServiceClass(object):
     # callback for the service
     def class_callback(self,request):
         #get the crash data
+        
+        self._laser_sub.crash_data()
+        #rospy.loginfo(self._laser_sub.get_crash_data())
         self.dirc_data = self._laser_sub.get_crash_data()
         #create a response 
         response = TriggerResponse()
@@ -23,10 +26,11 @@ class DirectionServiceClass(object):
     
     #if  front laser reading less than 0.8 indicates potential crash
     def potentional_crash(self):
+        #rospy.loginfo(self.dirc_data)
         if self.dirc_data["front"] < 0.8: #if less than 0.8 indicates potential crash
-            return False
-        else:
             return True
+        else:
+            return False
     #if right laser readings is more than left move right else move left 
     def direction_to_move(self):
         if self.dirc_data["right"] > self.dirc_data["left"]:

@@ -14,7 +14,7 @@ class OdometeryActionServerClass(object):
         self._as.start()
         self._result = record_odomResult()
         self.odom_subs_object = OdomSubClass()
-        self._seconds_recording = 120
+        self._seconds_recording = 60
         self._goal_distance = goal_distance
 
     def goal_callback(self,goal):

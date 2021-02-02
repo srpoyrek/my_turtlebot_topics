@@ -29,9 +29,9 @@ class LaserSubClass(object):
         self.front = self._laser_msg_object.ranges[360]
         self.right = self._laser_msg_object.ranges[0]
         self.left = self._laser_msg_object.ranges[719]
-        rospy.loginfo("Distance in front = "+str(self.front))
-        rospy.loginfo("Distance in right = "+str(self.left))
-        rospy.loginfo("Distance in left = "+str(self.right))
+        #rospy.loginfo("Distance in front = "+str(self.front))
+        #rospy.loginfo("Distance in right = "+str(self.left))
+        #rospy.loginfo("Distance in left = "+str(self.right))
     
     #returns crash data as dict
     def get_crash_data(self):
@@ -55,4 +55,6 @@ if __name__ == "__main__":
     while not ctrl_c:
         data = laser_sub_object.get_laserdata()
         laser_sub_object.crash_data()
+        #print(laser_sub_object.get_crash_data())
+        rate.sleep()
         #rospy.loginfo(data.ranges)

@@ -87,14 +87,14 @@ while not control_turtlebot_object.rec_odom_finished():
     direction_to_go = control_turtlebot_object.make_direction_request()
     # if success move forward else stop try again for more time for multiple times if still no response then stop
 
-    if direction_to_go.success is True:
+    if direction_to_go.success is False:
         control_turtlebot_object.move_turtlebot(direction="Forward")
     else:
         control_turtlebot_object.move_turtlebot(direction="Stop")
         time.sleep(2)
         control_turtlebot_object.move_turtlebot(direction_to_go.message)
         if i==0:
-            time.sleep(6.1)
+            time.sleep(5.9)
             
         elif i==1:
             time.sleep(6.15)

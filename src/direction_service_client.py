@@ -35,8 +35,8 @@ while not ctrl_c:
         rospy.logwarn("Direction To Go=="+str(result.message)) # print the result given by the service called
     else:
         #else show the direction to move
-        rospy.loginfo("Success =="+str(result.success)) # print the result given by the service called
-        rospy.loginfo("Direction To Go=="+str(result.message)) # print the result given by the service called
+        rospy.logwarn("Success =="+str(result.success)) # print the result given by the service called
+        rospy.logwarn("Direction To Go=="+str(result.message)) # print the result given by the service called
 
     rate.sleep()
 
